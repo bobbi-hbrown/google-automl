@@ -1,0 +1,21 @@
+{
+  "name": "sensible",
+  "version": "2.5.0",
+  "description": "Node.js idiomatic client for Cloud Storage.",
+  "main": "predictor.js",
+  "dependencies": {
+    "@google-cloud/automl": "^0.2.0",
+    "@google-cloud/storage": "^2.5.0",
+    "puppeteer": "^1.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.home-trial.com:Roberta.Holding-Brown/sensible-automl.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,5 @@
+
+automl-predictions
+511967775310459
+Download file to Cloud Function /tmp dir failed: 
+404 GET https://www.googleapis.com/download/storage/v1/b/sensible-screenshots/o/gs%3A%2F%2Fsensible-screenshots%2Fimages%2Fbbc%2F2019-04-18--0000--bbc.png?alt=media: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.PARTIAL_CONTENT: 206>)

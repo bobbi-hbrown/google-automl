@@ -1,0 +1,16 @@
+[{
+	"name": "bbc",
+    "domain": "https://www.bbc.co.uk/news",
+    "dimensions":"{width:1024, height:3000}"
+},
+{
+	"name": "dailymail",
+    "domain": "http://www.dailymail.co.uk/home/index.html",
+    "dimensions":"{width:1024, height:3000}"
+
+},
+{
+	"name": "independent",
+	"domain": "https://www.independent.co.uk/",
+    "dimensions":"{width:1024, height:3000}"
+}]
