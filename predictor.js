@@ -1,8 +1,8 @@
 // Script to programatically deploy AutoML model, download new images to /tmp dir, run online predictions on new images, then undeploy model when complete
-
-const projectId = 'sensible';
-const computeRegion = 'us-central1';
-const modelId = 'IOD4748957846131965952';
+const config = require('./config.json');
+const projectId = config.projectId;
+const computeRegion = config.computeRegion;
+const modelId = config.modelId;
 
 //Imports the Google Cloud Automl library
 const {AutoMlClient} = require('@google-cloud/automl').v1beta1;
