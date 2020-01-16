@@ -1,10 +1,14 @@
-# TODO(developer): Uncomment and set the following variables
-project_id = 'sensible'
-compute_region = 'us-central1'
-model_id = 'IOD1967492495021441024'
-
+import json
 from google.cloud import automl_v1beta1 as automl
 from google.cloud.automl_v1beta1 import enums
+
+
+with open('config.json') as json_file:
+    config = json.load(json_file)
+
+project_id = config.project_id
+compute_region = config.compute_region
+model_id = config.model_id
 
 client = automl.AutoMlClient()
 
