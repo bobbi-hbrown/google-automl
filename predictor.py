@@ -3,14 +3,13 @@ from google.cloud import storage
 from google.cloud import automl_v1beta1
 from google.cloud.automl_v1beta1.proto import service_pb2
 
-project_id = 'sensible'
-bucket_name = 'sensible-screenshots'
-model_id = 'IOD4748957846131965952'
+project_id = config.project_id
+bucket_name = config.bucket_name
+model_id = config.model_id
 
 # 'content' is base-64-encoded image data.
 # 'data' - dict - event payload
 # 'context' - metadata 
-
 def predict_on_trigger(data, context):
   '''This function is triggered whenever new files are uploaded to GCS sensible-screenshots/ bucket'''
 
@@ -29,9 +28,9 @@ def predict_on_trigger(data, context):
     print(e)
 
   try:
-    upload_predictions(args):
-  except:
-    pass
+    upload_predictions(project_id)
+  except Exception as e:
+    print(e)
 
 def download_blob(image_full_path, project_id, destination_file_name):
   # Downloads a blob from the bucket.
@@ -86,8 +85,8 @@ def get_prediction(destination_file_name, project_id, model_id, image_name):
         print('This warmup delay can occur when you initially query your model, or when you make a request from a model that has not been queried recently')
     else:
       print(e)
-  
-  def upload_predictions(project_id):
+
+def upload_predictions(project_id):
 
   try:
     storage_client = storage.Client(project=project_id)
@@ -97,5 +96,9 @@ def get_prediction(destination_file_name, project_id, model_id, image_name):
     blob.upload_from_filename(source_file_name)
 
     print('File {} uploaded to {}.'.format(
+        source_file_name,
+        destination_blob_name))
+  except Exception as e:
+    print('File {} failed to upload to {}.'.format(
         source_file_name,
         destination_blob_name))
