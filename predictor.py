@@ -1,7 +1,10 @@
-import sys, os, time
+import sys, os, time, json
 from google.cloud import storage
 from google.cloud import automl_v1beta1
 from google.cloud.automl_v1beta1.proto import service_pb2
+
+with open('config.json') as json_file:
+    config = json.load(json_file)
 
 project_id = config.project_id
 bucket_name = config.bucket_name
