@@ -1,2 +1,2 @@
 service-account.json
-node-modules/*
+node-modules/*node_modules/
